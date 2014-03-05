@@ -1,0 +1,18 @@
+Swordfish How-To:
+
+Compiling:
+
+Required: Ant
+
+All of the new codebase is Netbeans 6.1+ compliant and will can be built from within the Netbeans client.  If you don't want to use Netbeans you can compile from within the main folder by using the ant command.  Ant clean will clean the build target.  There is an online client supported for use with Java Web start.
+
+
+Running:
+
+The program can be run from the command line using java -jar Swordfish.jar from the build directory, but is usually run from within the IDE or run using a .jnlp file in the online case.  For using .jnlp to run the client in an online setting, consult with the online documentation for Java Web Start and choose the online target when building.
+
+
+Settings:
+
+Server connection options, name options and other options are loaded from a settings.xml file in the settings/ directory.  These options must be hard-coded for the online client since they cannot be loaded due to security restrictions for Java Web Start.
+

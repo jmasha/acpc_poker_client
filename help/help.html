@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<h1>Swordfish Help</h1>
+<h2>Table of Contents</h2>
+<ul>
+    <li><a href="#setup">Setup</a></li>
+    <ul>
+        <li><a href="#install">Installation</a></li>
+	<li><a href="#configure">Configureing your router</a></li>
+    </ul>
+    <li><a href="#play">Playing the Bots</a></li>
+    <ul>
+        <li><a href="#rungui">Running the GUI</a></li>
+	<li><a href="#runbot">Running the bot</a><li>
+	<ul>
+	    <li><a href ="#obtainip">Obtaining the IP address</a></li>
+	    <li><a href ="#startbot">Starting the AAAI Bot interface</a></li>
+	</ul>
+    </ul>
+    <li><a href="#controls">Controls</a>
+    <li><a href="#trouble">Troubleshooting</a></li>
+</ul>
+<h2><a name="setup">Setup</a></h2>
+<p>To play the No-Limit bots using the Swordfish Gui, we will first have to accomplish two small setup steps.</p>
+<h3><a name="installation">Installation</a></h3>
+<p>The installation procedure is fairly straightforward. and can be achieved by these simple steps</p>
+<ol>
+    <li>Step 1: Extract the tarball to a place on your machine.  Ensure that the location you choose has read/write access.</li>
+    <li>Step 2: Ensure that the following directories exist in the folder you uncrompessed the tarball to and that the file Swordfish.jar is in the Swordfish directory.
+    <ul>
+        <li>Swordfish</li>
+        <li>Swordfish/help</li>
+        <li>Swordfish/logs</li>
+        <li>Swordfish/libs</li>
+        <li>Swordfish/settings</li>
+    </ul>
+</ol>
+<p>The installation is now complete. To continue you must now configure your router to allow for port 4444 to be forwarded to this machine.  If your computer is connected to the internet directly, or there are no other computers on your router, you may be able to move directly to the <a href="#play">Playing the Bots</a> section of this guide.  If not continue on.</p>
+<h3><a name="configure">Configureing your Router</a></h3>
+<p>There is a great guide that can be located at <a href="http://portforward.com/routers.htm" target="_blank">http://portforward.com/routers.htm</a> that explains how to do port forwarding for almost any router on the planet.  It is used mostly to configure online games, but the steps are the same.  We will be forwarding <b>port 4444</b> to the machine that you are currently using the gui on.  To find the ip that you need to forward this too, you can go to the network settings and check on the local machine.  The ip will most likely be something like 192.168.X.Y.  Once that is done we can now run the program.</p>
+<h2><a name="play">Playing the Bots</a></h2>
+<h3><a name="rungui">Running the Gui</a></h3>
+<p>To run the gui, you can double click the Swordfish.jar file or open a terminal and type <b><i>java -jar Swordfish.jar</i></b>.
+<br>Once open, you should be prompted with a screen that ask you for some options.  You can leave these the way they are or customize them for the game you wish to play.  It is important however to choose the correct game of Short or Large Stack so the bot translation works.</p>
+<h3><a name="connectbots">Running the bot</a></h3>
+<p>If you are not running the bot code yourself, you can ignore most of this section, the only thing you will need is to obtain your <b>Router's ip</b>.  This is different from your localmachine ip.  You will have to tell this to the bot operator in order to play.</p>
+<ol>
+<li><a name="obtainip">Obtaining your IP</a>
+<p>To get this information you can visit <a href="http://www.ip-adress.com" target="_blank">http://www.ip-adress.com</a> and your ip should appear on the page.  You can also use any other method to get this information, you will just need it to run the bot.</p>
+</li>
+<li><a name="startbot">Starting the AAAI bot interface</a>
+<p> To start the bot, you will need a compiled version of the poker code.  Then you will go to trunk/src/c and run the aaai_bot.  The command to run the bot is ./aaai_bot NO_LIMIT 2 $IP 4444 strategy_player.so $STRATEGY where $IP is the ip address of the machine running the gui and $STRATEGY is a path to the strategy file you with so play.  If you wish to play small stack, specify the -s flag at the end.</p>
+</li>
+</ol>
+<h2><a name="controls">Controls</a></h2>
+<p><b>Console commands to come</b></p>
+<h2><a name="troubleshoot">Troubleshooting</a></h2>
+<p>Other than any stack traces that you may get from running the bot in a terminal, there are a handful of logs in the Swordfish/logs folder.  These can be deciphered or passed on to the bot handler to help diagnose your problem.</p>
+<p>If you can't get the bot to connect toi the gui, chances are the port forwarding is incorrect or there has been a start-up error.  Try following this guide again and if problems still presist contact the vendor.</p>
+</html>
