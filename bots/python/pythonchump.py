@@ -7,7 +7,7 @@ def connectSocket(ip,port):
     import socket
     playerSocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     playerSocket.connect((ip,int(port)))
-    playerSocket.send('Bot:1000:1:1\n')
+    playerSocket.send('VERSION:2.0.0\r\n')
     return playerSocket
 
 def listenSocket(playerSocket):
